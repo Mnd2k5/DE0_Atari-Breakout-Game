@@ -1,0 +1,472 @@
+Analysis & Synthesis report for pingpong_game
+Sun Nov 10 13:36:22 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Source assignments for breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1|altsyncram_hd81:auto_generated
+ 13. Parameter Settings for User Entity Instance: breakout_videogen:myVideogen
+ 14. Parameter Settings for User Entity Instance: breakout_videogen:myVideogen|breakout_playfield:game
+ 15. Parameter Settings for User Entity Instance: breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "breakout_videogen:myVideogen"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 10 13:36:22 2024      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; pingpong_game                              ;
+; Top-level Entity Name              ; breakout                                   ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 224                                        ;
+;     Total combinational functions  ; 219                                        ;
+;     Dedicated logic registers      ; 82                                         ;
+; Total registers                    ; 82                                         ;
+; Total pins                         ; 10                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 1,024                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; breakout           ; pingpong_game      ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; breakout.v                       ; yes             ; User Verilog HDL File        ; D:/quartus/breakout.v                                            ;         ;
+; playfield.v                      ; yes             ; User Verilog HDL File        ; D:/quartus/playfield.v                                           ;         ;
+; video_gen.v                      ; yes             ; User Verilog HDL File        ; D:/quartus/video_gen.v                                           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/aglobal131.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_hd81.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/quartus/db/altsyncram_hd81.tdf                                ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 224       ;
+;                                             ;           ;
+; Total combinational functions               ; 219       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 54        ;
+;     -- 3 input functions                    ; 84        ;
+;     -- <=2 input functions                  ; 81        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 116       ;
+;     -- arithmetic mode                      ; 103       ;
+;                                             ;           ;
+; Total registers                             ; 82        ;
+;     -- Dedicated logic registers            ; 82        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 10        ;
+; Total memory bits                           ; 1024      ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 83        ;
+; Total fan-out                               ; 842       ;
+; Average fan-out                             ; 2.61      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                   ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |breakout                                    ; 219 (20)          ; 82 (16)      ; 1024        ; 0            ; 0       ; 0         ; 10   ; 0            ; |breakout                                                                                                                   ; work         ;
+;    |breakout_videogen:myVideogen|            ; 199 (128)         ; 66 (61)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |breakout|breakout_videogen:myVideogen                                                                                      ; work         ;
+;       |breakout_playfield:game|              ; 71 (71)           ; 5 (5)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |breakout|breakout_videogen:myVideogen|breakout_playfield:game                                                              ; work         ;
+;          |altsyncram:RAMbrickwall[0]__1|     ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |breakout|breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1                                ; work         ;
+;             |altsyncram_hd81:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |breakout|breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1|altsyncram_hd81:auto_generated ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                            ;
++------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                         ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1|altsyncram_hd81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 1024         ; 1            ; --           ; --           ; 1024 ; None ;
++------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++---------------------------------------+---------------------------------------------------+
+; Register name                         ; Reason for Removal                                ;
++---------------------------------------+---------------------------------------------------+
+; breakout_videogen:myVideogen|ballY[0] ; Merged with breakout_videogen:myVideogen|ballX[0] ;
+; Total Number of Removed Registers = 1 ;                                                   ;
++---------------------------------------+---------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 82    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------+
+; Inverted Register Statistics                            ;
++-----------------------------------------------+---------+
+; Inverted Register                             ; Fan out ;
++-----------------------------------------------+---------+
+; breakout_videogen:myVideogen|ballY[2]         ; 3       ;
+; breakout_videogen:myVideogen|ballY[3]         ; 3       ;
+; breakout_videogen:myVideogen|ballX[2]         ; 4       ;
+; breakout_videogen:myVideogen|RestoreBrickwall ; 12      ;
+; breakout_videogen:myVideogen|ballX[6]         ; 4       ;
+; breakout_videogen:myVideogen|ballX[5]         ; 4       ;
+; breakout_videogen:myVideogen|ballY[5]         ; 3       ;
+; breakout_videogen:myVideogen|ballY[8]         ; 4       ;
+; Total number of inverted registers = 8        ;         ;
++-----------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1|altsyncram_hd81:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                         ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                          ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: breakout_videogen:myVideogen ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; hDrawArea      ; 640   ; Signed Integer                                   ;
+; hSyncPorch     ; 16    ; Signed Integer                                   ;
+; hSyncLen       ; 96    ; Signed Integer                                   ;
+; hFrameSize     ; 800   ; Signed Integer                                   ;
+; vDrawArea      ; 480   ; Signed Integer                                   ;
+; vSyncPorch     ; 10    ; Signed Integer                                   ;
+; vSyncLen       ; 2     ; Signed Integer                                   ;
+; vFrameSize     ; 525   ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: breakout_videogen:myVideogen|breakout_playfield:game ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; hDrawArea      ; 640   ; Signed Integer                                                           ;
+; vDrawArea      ; 480   ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1 ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                             ;
+; WIDTH_A                            ; 1                    ; Untyped                                                             ;
+; WIDTHAD_A                          ; 10                   ; Untyped                                                             ;
+; NUMWORDS_A                         ; 1024                 ; Untyped                                                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; WIDTH_B                            ; 1                    ; Untyped                                                             ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                             ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                             ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                             ;
+; DEVICE_FAMILY                      ; Cyclone III          ; Untyped                                                             ;
+; CBXI_PARAMETER                     ; altsyncram_hd81      ; Untyped                                                             ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                               ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                              ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                                  ;
+; Entity Instance                           ; breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                        ;
+;     -- WIDTH_A                            ; 1                                                                                  ;
+;     -- NUMWORDS_A                         ; 1024                                                                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                       ;
+;     -- WIDTH_B                            ; 1                                                                                  ;
+;     -- NUMWORDS_B                         ; 1                                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                          ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "breakout_videogen:myVideogen" ;
++---------------+-------+----------+-----------------------+
+; Port          ; Type  ; Severity ; Details               ;
++---------------+-------+----------+-----------------------+
+; PaddleX[9..7] ; Input ; Info     ; Stuck at VCC          ;
+; PaddleX[6..3] ; Input ; Info     ; Stuck at GND          ;
+; PaddleX[1..0] ; Input ; Info     ; Stuck at GND          ;
+; PaddleX[2]    ; Input ; Info     ; Stuck at VCC          ;
++---------------+-------+----------+-----------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Sun Nov 10 13:36:20 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pingpong_game -c pingpong_game
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file breakout.v
+    Info (12023): Found entity 1: breakout
+Info (12021): Found 1 design units, including 1 entities, in source file playfield.v
+    Info (12023): Found entity 1: breakout_playfield
+Info (12021): Found 1 design units, including 1 entities, in source file video_gen.v
+    Info (12023): Found entity 1: breakout_videogen
+Info (12127): Elaborating entity "breakout" for the top level hierarchy
+Info (12128): Elaborating entity "breakout_videogen" for hierarchy "breakout_videogen:myVideogen"
+Info (12128): Elaborating entity "breakout_playfield" for hierarchy "breakout_videogen:myVideogen|breakout_playfield:game"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1"
+Info (12130): Elaborated megafunction instantiation "breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1"
+Info (12133): Instantiated megafunction "breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "1"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hd81.tdf
+    Info (12023): Found entity 1: altsyncram_hd81
+Info (12128): Elaborating entity "altsyncram_hd81" for hierarchy "breakout_videogen:myVideogen|breakout_playfield:game|altsyncram:RAMbrickwall[0]__1|altsyncram_hd81:auto_generated"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 237 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 226 logic cells
+    Info (21064): Implemented 1 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4651 megabytes
+    Info: Processing ended: Sun Nov 10 13:36:22 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
